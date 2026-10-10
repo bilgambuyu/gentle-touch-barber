@@ -202,3 +202,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 .map-label b{display:block;font-family:var(--display);text-transform:uppercase;font-size:1.15rem;letter-spacing:.02em;color:var(--bone)}
 .map-open{position:absolute;right:1rem;bottom:1rem;display:inline-flex;align-items:center;gap:.5rem;background:var(--brass);color:var(--ground);font:600 .8rem/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:.8rem 1rem}
 .map-fallback:hover .map-open{background:var(--bone)}
+
+/* socials */
+.tb-social{display:inline-flex;gap:.9rem}
+.tb-social a{display:inline-flex;color:var(--brass)}
+.tb-social a:hover{color:var(--bone)}
+.tb-social .ic-s{margin:0;width:1.1em;height:1.1em}
+.socials{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.4rem}
+.socials a{display:flex;align-items:center;gap:.7rem;padding:.75rem .8rem;border:1px solid var(--line);text-decoration:none;min-width:0;transition:border-color .2s}
+.socials a:hover{border-color:var(--brass)}
+.socials .ic{width:22px;height:22px;color:var(--brass)}
+.socials span{display:grid;font-size:.82rem;color:var(--mute);min-width:0;overflow-wrap:anywhere}
+.socials b{font-family:var(--display);text-transform:uppercase;font-size:1.1rem;color:var(--bone);letter-spacing:.02em}
+@media (max-width:420px){.socials{grid-template-columns:1fr}}
