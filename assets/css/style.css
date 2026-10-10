@@ -293,3 +293,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
     .map-pin{animation:drop linear both;animation-timeline:view();animation-range:entry 20% cover 35%}
   }
 }
+
+.val-mail{text-transform:none;font-size:1.35rem;text-decoration:none;overflow-wrap:anywhere}
+.val-mail:hover{color:var(--brass)}
