@@ -26,40 +26,6 @@
       document.getElementById('map-fallback').hidden=true;
     }
   }catch(e){}
-
-  // Parallax: layers drift at different speeds while scrolling
-  (function(){
-    var mq=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');
-    if(mq&&mq.matches) return;
-    var layers=[];
-    function add(el,speed,frame){ if(el) layers.push({el:el,speed:speed,frame:frame||el}); }
-    add(document.querySelector('.hero-photo img'),0.10,document.querySelector('.hero-photo'));
-    add(document.querySelector('.hero-copy'),-0.06);
-    document.querySelectorAll('.gallery figure').forEach(function(f,i){ add(f.querySelector('img'), i%2?0.14:0.08, f); });
-    add(document.querySelector('.about-photo img'),0.12,document.querySelector('.about-photo'));
-    var heroPhoto=document.querySelector('.hero-photo');
-    var ticking=false;
-    function update(){
-      ticking=false;
-      var vh=window.innerHeight;
-      layers.forEach(function(l){
-        var r=l.frame.getBoundingClientRect();
-        if(r.bottom<-200||r.top>vh+200) return;
-        var off=(r.top+r.height/2)-vh/2;
-        var y=-off*l.speed;
-        var max=r.height*0.11; if(y>max)y=max; if(y<-max)y=-max;
-        l.el.style.translate='0 '+y.toFixed(1)+'px';
-      });
-      if(heroPhoto){
-        var hr=heroPhoto.getBoundingClientRect();
-        heroPhoto.style.setProperty('--frame-y',(-(hr.top+hr.height/2-vh/2)*0.06).toFixed(1)+'px');
-      }
-    }
-    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
-    window.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',onScroll);
-    update();
-  })();
   // Copy phone number
   var b=document.getElementById('copy-phone');
   b.addEventListener('click',function(){

@@ -293,10 +293,3 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
     .map-pin{animation:drop linear both;animation-timeline:view();animation-range:entry 20% cover 35%}
   }
 }
-
-/* parallax: images are oversized so they can drift inside their frames */
-.hero-photo img{height:118%;position:relative;top:-9%}
-.gallery img{height:124%;position:relative;top:-12%}
-.about-photo img{top:-12%;height:124%}
-.hero-photo::before{translate:0 var(--frame-y,0px)}
-.gallery img,.about-photo img,.hero-photo img,.hero-copy{will-change:translate}
